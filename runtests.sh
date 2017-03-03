@@ -13,6 +13,15 @@
 # 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+runTests() {
+    testSuperlists 
+}
+
+testSuperlists() {
+    cd superlists || exit 1
+    python3 manage.py test
+}
+
 formatCode() {
 	cd "$DIR" || exit
 	printf "\033[32mApplying yapf...\033[0m\n"
@@ -32,12 +41,12 @@ echo ""
 echo "$(date) :  Testing out new changes now :)"
 
 formatCode
-python3 functional_tests.py
+runTests
 STATUS=$?
 if [[ $STATUS == "0" ]]; then
 	printf "\033[32mPassing tests!\033[0m\n"
 	echo "I am in this directory: $(pwd)"
 	commitCode
 else
-	printf "\033[31mNot passing tests... :(\033[0m"
+	printf "\033[31mNot passing tests... :(\033[0m\n"
 fi

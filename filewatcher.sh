@@ -4,4 +4,4 @@
 #  (https://github.com/thomasfl/filewatcher)
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-filewatcher -l -s '**/*.py' "bash $DIR/runtests.sh" 
+filewatcher -l -s '**/*.py **/*.sh' "bash $DIR/runtests.sh" 
