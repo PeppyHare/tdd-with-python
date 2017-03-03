@@ -13,13 +13,10 @@
 # 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-runTests() {
-    testSuperlists 
-}
-
 testSuperlists() {
     cd superlists || exit 1
-    python3 manage.py test
+    sleep 1
+    python3 manage.py test lists
 }
 
 formatCode() {
@@ -41,8 +38,9 @@ echo ""
 echo "$(date) :  Testing out new changes now :)"
 
 formatCode
-runTests
+testSuperlists
 STATUS=$?
+sleep 1
 if [[ $STATUS == "0" ]]; then
 	printf "\033[32mPassing tests!\033[0m\n"
 	echo "I am in this directory: $(pwd)"
