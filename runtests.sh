@@ -16,7 +16,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 testSuperlists() {
     cd superlists || exit 1
     sleep 1
-    python3 manage.py test lists
+    python3 manage.py test
 }
 
 formatCode() {
