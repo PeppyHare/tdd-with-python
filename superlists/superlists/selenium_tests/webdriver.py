@@ -2,7 +2,7 @@ from django.conf import settings
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support.ui import WebDriverWait
 
-#determine the WebDriver module. default to Firefox
+# determine the WebDriver module. default to Firefox
 try:
     web_driver_module = settings.SELENIUM_WEBDRIVER
 except AttributeError:

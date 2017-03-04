@@ -17,7 +17,7 @@ testSuperlists() {
     cd superlists || exit 1
     sleep 1
     python3 manage.py test lists \
-    # && python3 manage.py test superlists
+    && python3 manage.py test superlists
 }
 
 formatCode() {
