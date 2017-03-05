@@ -1,2 +1,2 @@
-from superlists.selenium_tests.tests.newvisitor import (
+from selenium_tests.tests.newvisitor import (
     NewVisitorTest, )
