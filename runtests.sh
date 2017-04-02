@@ -23,7 +23,7 @@ testSuperlists() {
 formatCode() {
 	cd "$DIR" || exit
 	printf "\033[32mApplying yapf...\033[0m\n"
-	yapf -i -r .
+	python3 -m yapf -i -r -e "*.py" .
 }
 
 commitCode() {
